@@ -1,11 +1,50 @@
-@import 'tailwindcss';
+/* ─────────────────────────────────────────────────────────────────────────
+ * resources/css/app.css
+ *
+ * TailwindCSS v4 entry point for Bibliotheca.
+ *
+ * @import "tailwindcss" is the v4-style replacement for the three v3 directives:
+ *   @tailwind base;
+ *   @tailwind components;
+ *   @tailwind utilities;
+ * Those v3 directives are NOT recognised by the @tailwindcss/vite plugin and
+ * will produce an empty stylesheet if left in place.
+ *
+ * @source is required because Blade templates are never imported by app.js.
+ * TailwindCSS v4's automatic module-graph scanning only follows JS import
+ * chains; it will not find resources/views/** without an explicit directive.
+ * ───────────────────────────────────────────────────────────────────────── */
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@import "tailwindcss";
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* Tell TailwindCSS v4 to scan every Blade template for utility class names. */
+@source "../views/**/*.blade.php";
+
+/* Scan JS files too (covers any class names constructed in JavaScript). */
+@source "../js/**/*.js";
+
+/*
+ * Safe fallback layer — base styles applied before utilities.
+ *
+ * TailwindCSS v4 expresses its colour palette in the oklch() colour space via
+ * CSS custom properties.  If, during CSS custom-property resolution, a browser
+ * treats an oklch() token as a guaranteed-invalid value, the computed result
+ * falls through to the property's initial value (transparent for
+ * background-color).  Combined with color:white that is correctly applied via
+ * the universally-supported #fff hex value on --color-white, this produces
+ * white text on a white (transparent) canvas — an invisible, "blank" page.
+ *
+ * The @layer base block below sets an explicit sRGB fallback for the page
+ * background so the page is always visible even before utility classes apply,
+ * and so there is never an invisible-text condition.
+ */
+@layer base {
+    html,
+    body {
+        /* Near-black fallback — mirrors zinc-950's visual intent in sRGB */
+        background-color: #09090b;
+        /* Neutral white text fallback so content is always legible */
+        color: #fafafa;
+        min-height: 100vh;
+    }
 }
