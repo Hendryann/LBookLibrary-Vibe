@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CLI Arguments" tests="36" assertions="37" errors="17" failures="1" skipped="0" time="33.365453">
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" file="tests\Feature\Auth\LoginTest.php" tests="9" assertions="11" errors="4" failures="0" skipped="0" time="29.747746">
+      <testcase name="it logs in a user with valid credentials and redirects to dashboard" file="tests\Feature\Auth\LoginTest.php::it logs in a user with valid credentials and redirects to dashboard" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="0" time="15.184417">
+        <error type="Illuminate\Database\QueryException">it logs in a user with valid credentials and redirects to dashboardIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Dr. Ewell Bailey, emmy.mertz@example.com, 2026-06-11 12:53:38, $2y$04$Cpc7XTzbFupwCdUEfnDvm.wU0oXoyjLZxvLDZMrGtE6mlJFi/87Y., FV2Hdi4Idw, 2026-06-11 12:53:38, 2026-06-11 12:53:38))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:11
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:11</error>
+      </testcase>
+      <testcase name="it authenticates the user session after a successful login" file="tests\Feature\Auth\LoginTest.php::it authenticates the user session after a successful login" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="0" time="0.099399">
+        <error type="Illuminate\Database\QueryException">it authenticates the user session after a successful loginIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Giovanny Ernser, nadia76@example.org, 2026-06-11 12:53:41, $2y$04$kP5lYM782lqkEGwA35wEzuJnvqVB7sBtZVHNF4cThOt7d5eIre7N., g0RyyT93mI, 2026-06-11 12:53:41, 2026-06-11 12:53:41))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:24
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:24</error>
+      </testcase>
+      <testcase name="it rejects login when the password is incorrect" file="tests\Feature\Auth\LoginTest.php::it rejects login when the password is incorrect" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="0" time="0.106707">
+        <error type="Illuminate\Database\QueryException">it rejects login when the password is incorrectIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Hobart Hettinger, donna.tillman@example.org, 2026-06-11 12:53:41, $2y$04$2PLR7wu8h.KTJ8HvtxP/kuiMcaxTWHv6e78vKZTJ6vra.lJJ4.DNi, 9HEwIo18Zn, 2026-06-11 12:53:41, 2026-06-11 12:53:41))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:39
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\LoginTest.php:39</error>
+      </testcase>
+      <testcase name="it rejects login when the email does not exist" file="tests\Feature\Auth\LoginTest.php::it rejects login when the email does not exist" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="3" time="9.487253"/>
+      <testcase name="it rejects login when email field is empty" file="tests\Feature\Auth\LoginTest.php::it rejects login when email field is empty" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="2" time="0.148646"/>
+      <testcase name="it rejects login when email format is invalid" file="tests\Feature\Auth\LoginTest.php::it rejects login when email format is invalid" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="2" time="0.318642"/>
+      <testcase name="it rejects login when password field is empty" file="tests\Feature\Auth\LoginTest.php::it rejects login when password field is empty" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="2" time="0.082043"/>
+      <testcase name="it redirects authenticated users away from the login page" file="tests\Feature\Auth\LoginTest.php::it redirects authenticated users away from the login page" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="0" time="0.071240">
+        <error type="Illuminate\Database\QueryException">it redirects authenticated users away from the login pageIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Guy Wiza, tbrakus@example.org, 2026-06-11 12:53:51, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, gtuorPqHDs, 2026-06-11 12:53:51, 2026-06-11 12:53:51))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LoginTest.php:92
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LoginTest.php:92</error>
+      </testcase>
+      <testcase name="it renders the login page for guests" file="tests\Feature\Auth\LoginTest.php::it renders the login page for guests" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LoginTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LoginTest" assertions="2" time="4.249398"/>
+    </testsuite>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LogoutTest" file="tests\Feature\Auth\LogoutTest.php" tests="4" assertions="3" errors="3" failures="0" skipped="0" time="0.391348">
+      <testcase name="it logs out an authenticated user and redirects to login" file="tests\Feature\Auth\LogoutTest.php::it logs out an authenticated user and redirects to login" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LogoutTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LogoutTest" assertions="0" time="0.207459">
+        <error type="Illuminate\Database\QueryException">it logs out an authenticated user and redirects to loginIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Pietro Barton, larkin.tanya@example.net, 2026-06-11 12:53:55, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, eBo0YpWyTc, 2026-06-11 12:53:55, 2026-06-11 12:53:55))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:10
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:10</error>
+      </testcase>
+      <testcase name="it de-authenticates the user after logout" file="tests\Feature\Auth\LogoutTest.php::it de-authenticates the user after logout" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LogoutTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LogoutTest" assertions="0" time="0.055313">
+        <error type="Illuminate\Database\QueryException">it de-authenticates the user after logoutIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Allie Okuneva, boyle.bernhard@example.net, 2026-06-11 12:53:55, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, E3fRrcDneM, 2026-06-11 12:53:55, 2026-06-11 12:53:55))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:19
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:19</error>
+      </testcase>
+      <testcase name="it regenerates the CSRF token after logout" file="tests\Feature\Auth\LogoutTest.php::it regenerates the CSRF token after logout" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LogoutTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LogoutTest" assertions="0" time="0.073999">
+        <error type="Illuminate\Database\QueryException">it regenerates the CSRF token after logoutIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Darrin White, hammes.dion@example.org, 2026-06-11 12:53:55, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, DzUo45n7PC, 2026-06-11 12:53:55, 2026-06-11 12:53:55))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:28
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\LogoutTest.php:28</error>
+      </testcase>
+      <testcase name="it redirects unauthenticated requests to the logout route back to login" file="tests\Feature\Auth\LogoutTest.php::it redirects unauthenticated requests to the logout route back to login" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\LogoutTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.LogoutTest" assertions="3" time="0.054577"/>
+    </testsuite>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" file="tests\Feature\Auth\RegisterTest.php" tests="13" assertions="20" errors="2" failures="0" skipped="0" time="2.340767">
+      <testcase name="it registers a new user with valid data and redirects to dashboard" file="tests\Feature\Auth\RegisterTest.php::it registers a new user with valid data and redirects to dashboard" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.806680"/>
+      <testcase name="it creates a database record for the new user" file="tests\Feature\Auth\RegisterTest.php::it creates a database record for the new user" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="1" time="0.152979"/>
+      <testcase name="it stores the password as a bcrypt hash, never plain text" file="tests\Feature\Auth\RegisterTest.php::it stores the password as a bcrypt hash, never plain text" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.504842"/>
+      <testcase name="it assigns the MEMBER role to every newly registered user" file="tests\Feature\Auth\RegisterTest.php::it assigns the MEMBER role to every newly registered user" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="1" time="0.030404"/>
+      <testcase name="it authenticates the user immediately after registration" file="tests\Feature\Auth\RegisterTest.php::it authenticates the user immediately after registration" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="1" time="0.048900"/>
+      <testcase name="it rejects registration when name is missing" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when name is missing" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="3" time="0.502874"/>
+      <testcase name="it rejects registration when email is missing" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when email is missing" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.084222"/>
+      <testcase name="it rejects registration when email format is invalid" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when email format is invalid" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.041199"/>
+      <testcase name="it rejects registration when email is already taken" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when email is already taken" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="0" time="0.042739">
+        <error type="Illuminate\Database\QueryException">it rejects registration when email is already takenIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Kathleen Kirlin, jane@example.com, 2026-06-11 12:53:58, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, 3amfNCmKE8, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\RegisterTest.php:109
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\RegisterTest.php:109</error>
+      </testcase>
+      <testcase name="it rejects registration when password is missing" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when password is missing" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.041373"/>
+      <testcase name="it rejects registration when password is shorter than 8 characters" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when password is shorter than 8 characters" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.029437"/>
+      <testcase name="it rejects registration when password confirmation does not match" file="tests\Feature\Auth\RegisterTest.php::it rejects registration when password confirmation does not match" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="2" time="0.033166"/>
+      <testcase name="it redirects authenticated users away from the register page" file="tests\Feature\Auth\RegisterTest.php::it redirects authenticated users away from the register page" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\RegisterTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.RegisterTest" assertions="0" time="0.021952">
+        <error type="Illuminate\Database\QueryException">it redirects authenticated users away from the register pageIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Meredith Torphy III, maurine17@example.com, 2026-06-11 12:53:58, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, KyFbKCMJCY, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\RegisterTest.php:156
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\RegisterTest.php:156</error>
+      </testcase>
+    </testsuite>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" file="tests\Feature\Auth\UpdatePasswordTest.php" tests="9" assertions="2" errors="8" failures="0" skipped="0" time="0.360650">
+      <testcase name="it updates the password when the current password is correct" file="tests\Feature\Auth\UpdatePasswordTest.php::it updates the password when the current password is correct" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.041818">
+        <error type="Illuminate\Database\QueryException">it updates the password when the current password is correctIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Alysha Frami, danielle.kub@example.com, 2026-06-11 12:53:58, $2y$04$bDRjEAF4Di6IV/6EZMjik.KVZ2GhvavhTCAKC4Z/O4uceOzicUzUy, deNP8leQg1, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:11
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:11</error>
+      </testcase>
+      <testcase name="it persists the new password as a bcrypt hash in the database" file="tests\Feature\Auth\UpdatePasswordTest.php::it persists the new password as a bcrypt hash in the database" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.029492">
+        <error type="Illuminate\Database\QueryException">it persists the new password as a bcrypt hash in the databaseIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Mikel Bayer, ahaag@example.com, 2026-06-11 12:53:58, $2y$04$wHbTNcr4kDZPk7AbE/XVGeVFEe1EIu8HI5dNpbwRrrcSIWCV4MmUW, 8EzKrTcj7Z, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:27
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:27</error>
+      </testcase>
+      <testcase name="it rejects the update when current password is wrong" file="tests\Feature\Auth\UpdatePasswordTest.php::it rejects the update when current password is wrong" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.063795">
+        <error type="Illuminate\Database\QueryException">it rejects the update when current password is wrongIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Esther Kub, jalen12@example.org, 2026-06-11 12:53:58, $2y$04$RO9zeqEoJ4TsYdUZ1msqGO3wBXpJr58whlD7xwLwq.26FAb5BXhvK, VRtIbXX9JY, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:47
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:47</error>
+      </testcase>
+      <testcase name="it does not change the password when current password verification fails" file="tests\Feature\Auth\UpdatePasswordTest.php::it does not change the password when current password verification fails" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.066037">
+        <error type="Illuminate\Database\QueryException">it does not change the password when current password verification failsIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Prince Abernathy, yheidenreich@example.org, 2026-06-11 12:53:58, $2y$04$UNpY6C6OM.8lNvBojl/lGOlLt9xRM9V4AqIWbpO46I8Hg5p4ZTiZy, l4btaPyKkr, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:64
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:64</error>
+      </testcase>
+      <testcase name="it rejects update when current_password field is missing" file="tests\Feature\Auth\UpdatePasswordTest.php::it rejects update when current_password field is missing" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.026943">
+        <error type="Illuminate\Database\QueryException">it rejects update when current_password field is missingIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Gertrude Hills, evelyn.hill@example.com, 2026-06-11 12:53:58, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, 4fgcT6UJkS, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\UpdatePasswordTest.php:81
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\UpdatePasswordTest.php:81</error>
+      </testcase>
+      <testcase name="it rejects update when new password is too short" file="tests\Feature\Auth\UpdatePasswordTest.php::it rejects update when new password is too short" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.046084">
+        <error type="Illuminate\Database\QueryException">it rejects update when new password is too shortIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Prof. Joyce Kemmer PhD, kautzer.minerva@example.net, 2026-06-11 12:53:58, $2y$04$pSlfdaW4UuFgKNpBpBAW3.nGKptOJELPX0oNQdyT/6dU0ArmNtyGG, JGwbgQAP9V, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:93
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:93</error>
+      </testcase>
+      <testcase name="it rejects update when new password confirmation does not match" file="tests\Feature\Auth\UpdatePasswordTest.php::it rejects update when new password confirmation does not match" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.038809">
+        <error type="Illuminate\Database\QueryException">it rejects update when new password confirmation does not matchIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Prof. Zane Terry, shayna.nienow@example.com, 2026-06-11 12:53:58, $2y$04$ze0gkX00QPv.h1/cgaKdvuJKoyBi3O100gqbI6qmQjMEZBjkl3y2u, Q5wdugSvem, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:108
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Feature\Auth\UpdatePasswordTest.php:108</error>
+      </testcase>
+      <testcase name="it rejects update when new password field is missing" file="tests\Feature\Auth\UpdatePasswordTest.php::it rejects update when new password field is missing" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="0" time="0.022144">
+        <error type="Illuminate\Database\QueryException">it rejects update when new password field is missingIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Diego Stark, champlin.josefina@example.net, 2026-06-11 12:53:58, $2y$04$MIaygt.wHx/pZ4VLbsSu.OQEF46sFPqKWbfe.khlEmdWjh91aiXaq, BztcbCWV9h, 2026-06-11 12:53:58, 2026-06-11 12:53:58))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\UpdatePasswordTest.php:123
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table users has no column named email_verified_at
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Feature\Auth\UpdatePasswordTest.php:123</error>
+      </testcase>
+      <testcase name="it redirects unauthenticated users away from the password update route" file="tests\Feature\Auth\UpdatePasswordTest.php::it redirects unauthenticated users away from the password update route" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\Auth\UpdatePasswordTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.Auth.UpdatePasswordTest" assertions="2" time="0.025529"/>
+    </testsuite>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\ExampleTest" file="tests\Feature\ExampleTest.php" tests="1" assertions="1" errors="0" failures="1" skipped="0" time="0.524943">
+      <testcase name="it returns a successful response" file="tests\Feature\ExampleTest.php::it returns a successful response" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Feature\ExampleTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Feature.ExampleTest" assertions="1" time="0.524943">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">it returns a successful responseExpected response status code [200] but received 302.
+Failed asserting that 302 is identical to 200.&#13;
+at vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+at vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:175
+at tests\Feature\ExampleTest.php:6</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>
