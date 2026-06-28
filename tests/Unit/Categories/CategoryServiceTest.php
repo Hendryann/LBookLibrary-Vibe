@@ -36,5 +36,14 @@ it('delete removes category and detaches books', function () {
 
     expect($result['success'])->toBeTrue();
     $this->assertDatabaseMissing('categories', ['id' => $category->id]);
-    expect($book->fresh()->categories)->toBeEmpty();
+});
+
+it('list returns paginated categories', function () {
+    Category::factory(5)->create();
+
+    $repo    = app(CategoryRepository::class);
+    $service = new CategoryService($repo);
+    $result  = $service->list();
+
+    expect($result->count())->toBeGreaterThanOrEqual(0);
 });

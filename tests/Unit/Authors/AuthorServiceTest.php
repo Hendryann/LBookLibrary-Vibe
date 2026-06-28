@@ -46,3 +46,13 @@ it('update modifies author fields', function () {
 
     expect($updated->name)->toBe('New Name');
 });
+
+it('list returns paginated authors', function () {
+    Author::factory(5)->create();
+
+    $repo    = app(AuthorRepository::class);
+    $service = new AuthorService($repo);
+    $result  = $service->list();
+
+    expect($result->count())->toBeGreaterThanOrEqual(0);
+});

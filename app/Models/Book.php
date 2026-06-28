@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Database\Factories\BookFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,13 +11,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Book extends Model
 {
-    protected $fillable = [
-        'title',
-        'description',
-        'isbn',
-        'published_year',
-        'author_id',
-    ];
+    use HasFactory;
+
+    protected $fillable = ['title', 'description', 'isbn', 'publication_year', 'author_id'];
+
+    protected static function newFactory(): BookFactory
+    {
+        return BookFactory::new();
+    }
 
     public function author(): BelongsTo
     {

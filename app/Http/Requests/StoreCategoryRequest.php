@@ -8,8 +8,11 @@ class StoreCategoryRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        $role = $this->user()?->role?->value ?? '';
+        if (!auth()->check()) {
+            return false;
+        }
 
+        $role = auth()->user()->role?->value ?? '';
         return in_array($role, ['admin', 'librarian'], true);
     }
 

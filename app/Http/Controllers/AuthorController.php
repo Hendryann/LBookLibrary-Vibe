@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use App\Models\Author;
 use App\Services\AuthorService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -19,14 +20,8 @@ class AuthorController extends Controller
         return view('authors.index', compact('authors'));
     }
 
-    public function show(int $id): View
+    public function show(Author $author): View
     {
-        $author = $this->service->find($id);
-
-        if (!$author) {
-            abort(404, 'Author not found.');
-        }
-
         return view('authors.show', compact('author'));
     }
 
@@ -45,40 +40,24 @@ class AuthorController extends Controller
             ->with('success', 'Author created successfully.');
     }
 
-    public function edit(int $id): View
+    public function edit(Author $author): View
     {
         $this->authorizeManage();
-        $author = $this->service->find($id);
-
-        if (!$author) {
-            abort(404, 'Author not found.');
-        }
 
         return view('authors.edit', compact('author'));
     }
 
-    public function update(UpdateAuthorRequest $request, int $id): RedirectResponse
+    public function update(UpdateAuthorRequest $request, Author $author): RedirectResponse
     {
-        $author = $this->service->find($id);
-
-        if (!$author) {
-            abort(404, 'Author not found.');
-        }
-
         $this->service->update($author, $request->validated());
 
         return redirect()->route('authors.show', $author->id)
             ->with('success', 'Author updated successfully.');
     }
 
-    public function destroy(int $id): RedirectResponse
+    public function destroy(Author $author): RedirectResponse
     {
         $this->authorizeManage();
-        $author = $this->service->find($id);
-
-        if (!$author) {
-            abort(404, 'Author not found.');
-        }
 
         $result = $this->service->delete($author);
 
@@ -91,14 +70,8 @@ class AuthorController extends Controller
             ->with('success', $result['message']);
     }
 
-    public function books(int $id): View
+    public function books(Author $author): View
     {
-        $author = $this->service->find($id);
-
-        if (!$author) {
-            abort(404, 'Author not found.');
-        }
-
         $books = $this->service->authorBooks($author);
 
         return view('authors.books', compact('author', 'books'));

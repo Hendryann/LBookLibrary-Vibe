@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Author;
+use App\Models\Book;
 use App\Models\Category;
 use App\Services\BookService;
 use Illuminate\Http\RedirectResponse;
@@ -23,14 +24,8 @@ class BookController extends Controller
         return view('books.index', compact('books', 'categories'));
     }
 
-    public function show(int $id): View
+    public function show(Book $book): View
     {
-        $book = $this->service->find($id);
-
-        if (!$book) {
-            abort(404, 'Book not found.');
-        }
-
         return view('books.show', compact('book'));
     }
 
@@ -51,14 +46,9 @@ class BookController extends Controller
             ->with('success', 'Book created successfully.');
     }
 
-    public function edit(int $id): View
+    public function edit(Book $book): View
     {
         $this->authorizeManage();
-        $book = $this->service->find($id);
-
-        if (!$book) {
-            abort(404, 'Book not found.');
-        }
 
         $authors    = Author::orderBy('name')->get();
         $categories = Category::orderBy('name')->get();
@@ -66,29 +56,17 @@ class BookController extends Controller
         return view('books.edit', compact('book', 'authors', 'categories'));
     }
 
-    public function update(UpdateBookRequest $request, int $id): RedirectResponse
+    public function update(UpdateBookRequest $request, Book $book): RedirectResponse
     {
-        $book = $this->service->find($id);
-
-        if (!$book) {
-            abort(404, 'Book not found.');
-        }
-
         $this->service->update($book, $request->validated());
 
         return redirect()->route('books.show', $book->id)
             ->with('success', 'Book updated successfully.');
     }
 
-    public function destroy(int $id): RedirectResponse
+    public function destroy(Book $book): RedirectResponse
     {
         $this->authorizeManage();
-        $book = $this->service->find($id);
-
-        if (!$book) {
-            abort(404, 'Book not found.');
-        }
-
         $this->service->delete($book);
 
         return redirect()->route('books.index')

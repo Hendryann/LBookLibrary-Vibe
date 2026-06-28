@@ -8,16 +8,17 @@ class UpdateBookRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        $role = $this->user()?->role?->value ?? '';
+        if (!auth()->check()) {
+            return false;
+        }
 
+        $role = auth()->user()->role?->value ?? '';
         return in_array($role, ['admin', 'librarian'], true);
     }
 
     public function rules(): array
     {
-        $bookId = $this->route('book') instanceof \App\Models\Book
-            ? $this->route('book')->id
-            : $this->route('book');
+        $bookId = $this->route('book')?->id ?? 0;
 
         return [
             'title'            => ['required', 'string', 'max:255'],

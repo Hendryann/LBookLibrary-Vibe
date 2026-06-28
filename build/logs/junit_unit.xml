@@ -1,100 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CLI Arguments" tests="24" assertions="25" errors="9" failures="0" skipped="0" time="21.696792">
-    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" file="tests\Unit\Auth\AuthenticationServiceTest.php" tests="13" assertions="20" errors="0" failures="0" skipped="0" time="9.519287">
-      <testcase name="it register passes name and email through to the repository unchanged" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register passes name and email through to the repository unchanged" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="8.011206"/>
-      <testcase name="it register hashes the password before passing it to the repository" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register hashes the password before passing it to the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.061706"/>
-      <testcase name="it register always assigns the MEMBER role" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register always assigns the MEMBER role" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.054114"/>
-      <testcase name="it register returns the User instance produced by the repository" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register returns the User instance produced by the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.048488"/>
-      <testcase name="it login returns the user when credentials are valid" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login returns the user when credentials are valid" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.051953"/>
-      <testcase name="it login throws ValidationException when the email is not found" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login throws ValidationException when the email is not found" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.822121"/>
-      <testcase name="it login throws ValidationException when the password is wrong" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login throws ValidationException when the password is wrong" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.049762"/>
-      <testcase name="it login attaches the error to the email field in the ValidationException" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login attaches the error to the email field in the ValidationException" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.079101"/>
-      <testcase name="it updatePassword calls the repository with a hashed new password" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword calls the repository with a hashed new password" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.065481"/>
-      <testcase name="it updatePassword throws ValidationException when current password is wrong" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword throws ValidationException when current password is wrong" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.058661"/>
-      <testcase name="it updatePassword attaches the error to current_password field in the exception" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword attaches the error to current_password field in the exception" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.073990"/>
-      <testcase name="it updatePassword does not call the repository when current password fails" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword does not call the repository when current password fails" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.082297"/>
-      <testcase name="it updatePassword never stores the new password as plain text" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword never stores the new password as plain text" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.060406"/>
+  <testsuite name="CLI Arguments" tests="26" assertions="25" errors="10" failures="0" skipped="0" time="4.612705">
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" file="tests\Unit\Auth\AuthenticationServiceTest.php" tests="13" assertions="20" errors="0" failures="0" skipped="0" time="0.607308">
+      <testcase name="it register passes name and email through to the repository unchanged" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register passes name and email through to the repository unchanged" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.339219"/>
+      <testcase name="it register hashes the password before passing it to the repository" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register hashes the password before passing it to the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.026586"/>
+      <testcase name="it register always assigns the MEMBER role" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register always assigns the MEMBER role" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.034620"/>
+      <testcase name="it register returns the User instance produced by the repository" file="tests\Unit\Auth\AuthenticationServiceTest.php::it register returns the User instance produced by the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.016120"/>
+      <testcase name="it login returns the user when credentials are valid" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login returns the user when credentials are valid" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.019298"/>
+      <testcase name="it login throws ValidationException when the email is not found" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login throws ValidationException when the email is not found" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.029058"/>
+      <testcase name="it login throws ValidationException when the password is wrong" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login throws ValidationException when the password is wrong" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.018977"/>
+      <testcase name="it login attaches the error to the email field in the ValidationException" file="tests\Unit\Auth\AuthenticationServiceTest.php::it login attaches the error to the email field in the ValidationException" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.015684"/>
+      <testcase name="it updatePassword calls the repository with a hashed new password" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword calls the repository with a hashed new password" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.019028"/>
+      <testcase name="it updatePassword throws ValidationException when current password is wrong" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword throws ValidationException when current password is wrong" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.026511"/>
+      <testcase name="it updatePassword attaches the error to current_password field in the exception" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword attaches the error to current_password field in the exception" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="2" time="0.019061"/>
+      <testcase name="it updatePassword does not call the repository when current password fails" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword does not call the repository when current password fails" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.025275"/>
+      <testcase name="it updatePassword never stores the new password as plain text" file="tests\Unit\Auth\AuthenticationServiceTest.php::it updatePassword never stores the new password as plain text" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Auth\AuthenticationServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Auth.AuthenticationServiceTest" assertions="1" time="0.017871"/>
     </testsuite>
-    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" file="tests\Unit\Authors\AuthorServiceTest.php" tests="4" assertions="2" errors="3" failures="0" skipped="0" time="10.689126">
-      <testcase name="it delete fails when author has books" file="tests\Unit\Authors\AuthorServiceTest.php::it delete fails when author has books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="7.714449">
-        <error type="BadMethodCallException">it delete fails when author has booksBadMethodCallException: Call to undefined method App\Models\Author::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" file="tests\Unit\Authors\AuthorServiceTest.php" tests="5" assertions="0" errors="5" failures="0" skipped="0" time="2.835533">
+      <testcase name="it delete fails when author has books" file="tests\Unit\Authors\AuthorServiceTest.php::it delete fails when author has books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="2.541976">
+        <error type="Illuminate\Database\QueryException">it delete fails when author has booksIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Mrs. Eudora Prosacco, Alias quos aut inventore repellendus et vitae. Quia illo sunt ipsam harum minima voluptas consequatur. Autem deleniti sapiente nesciunt unde ut ab perferendis vel.
+
+Reiciendis sunt eos sint error. Est reiciendis nisi tempore aut reiciendis quis tempore. Dicta et amet quam dolore ipsa illo., 2026-06-28 21:38:02, 2026-06-28 21:38:02))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Unit\Authors\AuthorServiceTest.php:11
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
 at tests\Unit\Authors\AuthorServiceTest.php:11</error>
       </testcase>
-      <testcase name="it delete succeeds when author has no books" file="tests\Unit\Authors\AuthorServiceTest.php::it delete succeeds when author has no books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.080638">
-        <error type="BadMethodCallException">it delete succeeds when author has no booksBadMethodCallException: Call to undefined method App\Models\Author::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
+      <testcase name="it delete succeeds when author has no books" file="tests\Unit\Authors\AuthorServiceTest.php::it delete succeeds when author has no books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.070482">
+        <error type="Illuminate\Database\QueryException">it delete succeeds when author has no booksIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Dr. Akeem Waters DVM, Quia cupiditate voluptate recusandae quis omnis ex iste. Aut totam eligendi sint nemo est accusantium laboriosam. Veniam dignissimos voluptas deserunt nisi.
+
+Beatae error laborum animi ut. Nemo unde voluptas et aut blanditiis. Expedita et molestias tenetur quaerat eos ut. Ipsam pariatur illum sunt facere maxime., 2026-06-28 21:38:04, 2026-06-28 21:38:04))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Unit\Authors\AuthorServiceTest.php:23
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
 at tests\Unit\Authors\AuthorServiceTest.php:23</error>
       </testcase>
-      <testcase name="it create persists author" file="tests\Unit\Authors\AuthorServiceTest.php::it create persists author" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="2" time="2.792578"/>
-      <testcase name="it update modifies author fields" file="tests\Unit\Authors\AuthorServiceTest.php::it update modifies author fields" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.101461">
-        <error type="BadMethodCallException">it update modifies author fieldsBadMethodCallException: Call to undefined method App\Models\Author::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
+      <testcase name="it create persists author" file="tests\Unit\Authors\AuthorServiceTest.php::it create persists author" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.076710">
+        <error type="Illuminate\Database\QueryException">it create persists authorIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Test Author, Bio, 2026-06-28 21:38:04, 2026-06-28 21:38:04))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:1219
+at vendor\laravel\framework\src\Illuminate\Support\helpers.php:393
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:1218
+at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
 at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
 at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
+at app\Repositories\AuthorRepository.php:27
+at app\Services\AuthorService.php:25
+at tests\Unit\Authors\AuthorServiceTest.php:35
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:1219
+at vendor\laravel\framework\src\Illuminate\Support\helpers.php:393
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:1218
+at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
+at app\Repositories\AuthorRepository.php:27
+at app\Services\AuthorService.php:25
+at tests\Unit\Authors\AuthorServiceTest.php:35</error>
+      </testcase>
+      <testcase name="it update modifies author fields" file="tests\Unit\Authors\AuthorServiceTest.php::it update modifies author fields" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.064942">
+        <error type="Illuminate\Database\QueryException">it update modifies author fieldsIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Old Name, Sint id inventore repellendus tenetur maxime culpa quam. Rerum reiciendis consequuntur dignissimos ut optio. Aut incidunt earum in iste voluptas repellat.
+
+Ipsa eos at voluptatem provident doloribus quia reprehenderit. Dolor eaque autem ipsum consequatur expedita sit quia. Odio nostrum et dolorem voluptas laborum numquam voluptas sit. Minima fugit qui repellendus voluptate quia praesentium., 2026-06-28 21:38:04, 2026-06-28 21:38:04))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
+at tests\Unit\Authors\AuthorServiceTest.php:42
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:315
 at tests\Unit\Authors\AuthorServiceTest.php:42</error>
       </testcase>
-    </testsuite>
-    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" file="tests\Unit\Books\BookServiceTest.php" tests="4" assertions="1" errors="4" failures="0" skipped="0" time="1.263699">
-      <testcase name="it delegates search to the repository" file="tests\Unit\Books\BookServiceTest.php::it delegates search to the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="1" time="1.057899">
-        <error type="Mockery\Exception\NoMatchingExpectationException">it delegates search to the repositoryMockery\Exception\NoMatchingExpectationException: No matching handler found for Mockery_3_App_Repositories_BookRepository::search(NULL, NULL, 'title', 'asc'). Either the method was unexpected or its arguments matched no expected argument list for this method&#13;
-&#13;
-&#13;
-at vendor\mockery\mockery\library\Mockery\ExpectationDirector.php:90
-at app\Services\BookService.php:15
-at tests\Unit\Books\BookServiceTest.php:19</error>
+      <testcase name="it list returns paginated authors" file="tests\Unit\Authors\AuthorServiceTest.php::it list returns paginated authors" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Authors\AuthorServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Authors.AuthorServiceTest" assertions="0" time="0.081423">
+        <error type="Illuminate\Database\QueryException">it list returns paginated authorsIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Lillian Fisher, Est sunt ducimus officia ipsum. Repellat sapiente ipsum soluta autem quas. Et ipsam dolorum adipisci alias. Qui soluta natus molestias officiis distinctio corrupti et.
+
+Deserunt itaque perferendis consequatur vero eius. Voluptatem enim at voluptatem omnis eum ut qui. Dicta laborum odio amet optio ut reprehenderit non. Omnis consectetur laboriosam vel distinctio ex tempore quo. Omnis qui nihil quos quos minima., 2026-06-28 21:38:04, 2026-06-28 21:38:04))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:325
+at tests\Unit\Authors\AuthorServiceTest.php:51
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:325
+at tests\Unit\Authors\AuthorServiceTest.php:51</error>
       </testcase>
-      <testcase name="it delegates find to the repository" file="tests\Unit\Books\BookServiceTest.php::it delegates find to the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.062624">
-        <error type="BadMethodCallException">it delegates find to the repositoryBadMethodCallException: Call to undefined method App\Models\Book::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
+    </testsuite>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" file="tests\Unit\Books\BookServiceTest.php" tests="4" assertions="0" errors="4" failures="0" skipped="0" time="0.535527">
+      <testcase name="it search returns paginated results" file="tests\Unit\Books\BookServiceTest.php::it search returns paginated results" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.235457">
+        <error type="Illuminate\Database\QueryException">it search returns paginated resultsIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Miss Christiana Koelpin, Et dolorem adipisci omnis sequi corrupti reprehenderit. Facere dolor quisquam necessitatibus omnis. Saepe eligendi nemo officiis nihil.
+
+Sequi omnis recusandae aut. Non possimus dolore magnam omnis voluptatem., 2026-06-28 21:38:04, 2026-06-28 21:38:04))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:439
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:438
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Books\BookServiceTest.php:12
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:439
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:438
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Books\BookServiceTest.php:12</error>
+      </testcase>
+      <testcase name="it find returns book" file="tests\Unit\Books\BookServiceTest.php::it find returns book" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.133201">
+        <error type="Illuminate\Database\QueryException">it find returns bookIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Tito Dooley, Neque eligendi aut eos in voluptas iusto reiciendis. Corrupti magnam ab fuga aut. Totam non laudantium consequatur dolor molestiae omnis. Nihil deleniti blanditiis id. In accusamus non labore est enim aut.
+
+Molestiae optio odio veniam recusandae id. Sunt doloremque non quas dolor qui nam. Sed quia eos quia ut voluptatibus. Dignissimos sed et fugit saepe., 2026-06-28 21:38:05, 2026-06-28 21:38:05))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Books\BookServiceTest.php:23
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
 at tests\Unit\Books\BookServiceTest.php:23</error>
       </testcase>
-      <testcase name="it delegates create to the repository" file="tests\Unit\Books\BookServiceTest.php::it delegates create to the repository" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.066793">
-        <error type="BadMethodCallException">it delegates create to the repositoryBadMethodCallException: Call to undefined method App\Models\Author::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
-at tests\Unit\Books\BookServiceTest.php:33</error>
+      <testcase name="it create persists book" file="tests\Unit\Books\BookServiceTest.php::it create persists book" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.083686">
+        <error type="Illuminate\Database\QueryException">it create persists bookIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Jaeden Raynor, Debitis qui perferendis quisquam temporibus officia sunt omnis. Quasi veritatis illum tenetur qui sint. Earum ipsa autem quisquam in. Modi quaerat et qui quam perspiciatis ullam ea.
+
+Itaque est ducimus repellendus optio ex. Delectus expedita ullam ab ratione fugiat est facilis. Quis nesciunt reprehenderit omnis., 2026-06-28 21:38:05, 2026-06-28 21:38:05))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Unit\Books\BookServiceTest.php:32
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at tests\Unit\Books\BookServiceTest.php:32</error>
       </testcase>
-      <testcase name="it delete returns success result" file="tests\Unit\Books\BookServiceTest.php::it delete returns success result" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.076383">
-        <error type="BadMethodCallException">it delete returns success resultBadMethodCallException: Call to undefined method App\Models\Book::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
-at tests\Unit\Books\BookServiceTest.php:45</error>
+      <testcase name="it delete returns success result" file="tests\Unit\Books\BookServiceTest.php::it delete returns success result" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Books\BookServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Books.BookServiceTest" assertions="0" time="0.083183">
+        <error type="Illuminate\Database\QueryException">it delete returns success resultIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Maia White DDS, Quo ut laudantium facilis illum et. Eligendi expedita voluptatem quibusdam amet. In magnam cumque voluptatem a ea.
+
+Ducimus quas similique enim repudiandae. Voluptates a pariatur dicta. Sunt voluptatum beatae corrupti corporis., 2026-06-28 21:38:05, 2026-06-28 21:38:05))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Books\BookServiceTest.php:49
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Books\BookServiceTest.php:49</error>
       </testcase>
     </testsuite>
-    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" file="tests\Unit\Categories\CategoryServiceTest.php" tests="3" assertions="2" errors="2" failures="0" skipped="0" time="0.224680">
-      <testcase name="it create persists category" file="tests\Unit\Categories\CategoryServiceTest.php::it create persists category" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="2" time="0.102487"/>
-      <testcase name="it update modifies category name" file="tests\Unit\Categories\CategoryServiceTest.php::it update modifies category name" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="0" time="0.063729">
-        <error type="BadMethodCallException">it update modifies category nameBadMethodCallException: Call to undefined method App\Models\Category::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
-at tests\Unit\Categories\CategoryServiceTest.php:20</error>
+    <testsuite name="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" file="tests\Unit\Categories\CategoryServiceTest.php" tests="4" assertions="5" errors="1" failures="0" skipped="0" time="0.634337">
+      <testcase name="it create persists category" file="tests\Unit\Categories\CategoryServiceTest.php::it create persists category" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="2" time="0.090333"/>
+      <testcase name="it update modifies category name" file="tests\Unit\Categories\CategoryServiceTest.php::it update modifies category name" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="1" time="0.148877"/>
+      <testcase name="it delete removes category and detaches books" file="tests\Unit\Categories\CategoryServiceTest.php::it delete removes category and detaches books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="0" time="0.083386">
+        <error type="Illuminate\Database\QueryException">it delete removes category and detaches booksIlluminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography (Connection: sqlite, Database: :memory:, SQL: insert into "authors" ("name", "biography", "updated_at", "created_at") values (Gussie O'Conner, Amet vero voluptas libero amet fugiat quis. Nostrum qui dolorem itaque et atque. Asperiores eum rem sequi maxime id.
+
+Est sed est error quia veritatis qui delectus. Itaque sapiente id qui architecto corrupti nobis doloribus voluptas. Quia quod quo rerum., 2026-06-28 21:38:05, 2026-06-28 21:38:05))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Categories\CategoryServiceTest.php:30
+Caused by
+PDOException: SQLSTATE[HY000]: General error: 1 table authors has no column named biography
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:537
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:4170
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2237
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1436
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1401
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1240
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:370
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:275
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:365
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:321
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:583
+at vendor\laravel\framework\src\Illuminate\Collections\Arr.php:841
+at vendor\laravel\framework\src\Illuminate\Collections\Collection.php:829
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:575
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:529
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:513
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\GuardsAttributes.php:157
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:512
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:429
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:318
+at tests\Unit\Categories\CategoryServiceTest.php:30</error>
       </testcase>
-      <testcase name="it delete removes category and detaches books" file="tests\Unit\Categories\CategoryServiceTest.php::it delete removes category and detaches books" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="0" time="0.058464">
-        <error type="BadMethodCallException">it delete removes category and detaches booksBadMethodCallException: Call to undefined method App\Models\Category::factory()&#13;
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:67
-at vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:36
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2544
-at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2560
-at tests\Unit\Categories\CategoryServiceTest.php:29</error>
-      </testcase>
+      <testcase name="it list returns paginated categories" file="tests\Unit\Categories\CategoryServiceTest.php::it list returns paginated categories" class="D\EngineersJourney\MahasiswaCS\Semester4\ResearchMethodology\LaravelCoding\BookLibraryVibe\tests\Unit\Categories\CategoryServiceTest" classname="D.EngineersJourney.MahasiswaCS.Semester4.ResearchMethodology.LaravelCoding.BookLibraryVibe.tests.Unit.Categories.CategoryServiceTest" assertions="2" time="0.311741"/>
     </testsuite>
   </testsuite>
 </testsuites>

@@ -3,82 +3,77 @@
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\User;
+use App\Enums\Role;
 
 uses(\Illuminate\Foundation\Testing\RefreshDatabase::class);
 
-// INDEX
-it('shows the authors index page', function () {
+it('shows authors index', function () {
     $this->get(route('authors.index'))->assertStatus(200);
 });
 
-// SHOW
-it('shows an author detail page', function () {
+it('shows author detail', function () {
     $author = Author::factory()->create();
-    $this->get(route('authors.show', $author->id))->assertStatus(200)->assertSee($author->name);
+    $this->get(route('authors.show', $author))->assertStatus(200)->assertSee($author->name);
 });
 
-it('returns 404 for non-existent author', function () {
+it('returns 404 for missing author', function () {
     $this->get(route('authors.show', 9999))->assertStatus(404);
 });
 
-// STORE
-it('admin can create an author', function () {
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::ADMIN]))
+it('admin creates author', function () {
+    $this->actingAs(User::factory()->create(['role' => Role::ADMIN]))
         ->post(route('authors.store'), ['name' => 'Jane Doe', 'biography' => 'Bio.'])
         ->assertRedirect();
 
     $this->assertDatabaseHas('authors', ['name' => 'Jane Doe']);
 });
 
-it('validates name required on author store', function () {
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::ADMIN]))
+it('validates name required', function () {
+    $this->actingAs(User::factory()->create(['role' => Role::ADMIN]))
         ->post(route('authors.store'), [])
         ->assertSessionHasErrors('name');
 });
 
-it('member cannot create author', function () {
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::MEMBER]))
+it('member forbidden from create', function () {
+    $this->actingAs(User::factory()->create(['role' => Role::MEMBER]))
         ->post(route('authors.store'), ['name' => 'X'])
         ->assertStatus(403);
 });
 
-// UPDATE
-it('librarian can update an author', function () {
+it('librarian updates author', function () {
     $author = Author::factory()->create();
 
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::LIBRARIAN]))
-        ->put(route('authors.update', $author->id), ['name' => 'Updated Name'])
+    $this->actingAs(User::factory()->create(['role' => Role::LIBRARIAN]))
+        ->put(route('authors.update', $author), ['name' => 'Updated Name'])
         ->assertRedirect();
 
     $this->assertDatabaseHas('authors', ['id' => $author->id, 'name' => 'Updated Name']);
 });
 
-// DELETE
-it('admin can delete an author without books', function () {
+it('admin deletes author without books', function () {
     $author = Author::factory()->create();
 
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::ADMIN]))
-        ->delete(route('authors.destroy', $author->id))
+    $this->actingAs(User::factory()->create(['role' => Role::ADMIN]))
+        ->delete(route('authors.destroy', $author))
         ->assertRedirect(route('authors.index'));
 
     $this->assertDatabaseMissing('authors', ['id' => $author->id]);
 });
 
-it('cannot delete author with associated books', function () {
+it('cannot delete author with books', function () {
     $author = Author::factory()->create();
     Book::factory()->create(['author_id' => $author->id]);
 
-    $this->actingAs(User::factory()->create(['role' => \App\Enums\Role::ADMIN]))
-        ->delete(route('authors.destroy', $author->id))
+    $this->actingAs(User::factory()->create(['role' => Role::ADMIN]))
+        ->delete(route('authors.destroy', $author))
         ->assertRedirect();
 
     $this->assertDatabaseHas('authors', ['id' => $author->id]);
 });
 
-// BOOKS
-it('shows books for an author', function () {
+it('shows books for author', function () {
     $author = Author::factory()->create();
     $book   = Book::factory()->create(['author_id' => $author->id]);
 
-    $this->get(route('authors.books', $author->id))->assertStatus(200)->assertSee($book->title);
+    $this->get(route('authors.books', $author))->assertStatus(200)->assertSee($book->title);
 });

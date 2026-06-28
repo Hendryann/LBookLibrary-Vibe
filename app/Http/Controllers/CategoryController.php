@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Models\Category;
 use App\Services\CategoryService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -19,14 +20,8 @@ class CategoryController extends Controller
         return view('categories.index', compact('categories'));
     }
 
-    public function show(int $id): View
+    public function show(Category $category): View
     {
-        $category = $this->service->find($id);
-
-        if (!$category) {
-            abort(404, 'Category not found.');
-        }
-
         return view('categories.show', compact('category'));
     }
 
@@ -45,40 +40,24 @@ class CategoryController extends Controller
             ->with('success', 'Category created successfully.');
     }
 
-    public function edit(int $id): View
+    public function edit(Category $category): View
     {
         $this->authorizeManage();
-        $category = $this->service->find($id);
-
-        if (!$category) {
-            abort(404, 'Category not found.');
-        }
 
         return view('categories.edit', compact('category'));
     }
 
-    public function update(UpdateCategoryRequest $request, int $id): RedirectResponse
+    public function update(UpdateCategoryRequest $request, Category $category): RedirectResponse
     {
-        $category = $this->service->find($id);
-
-        if (!$category) {
-            abort(404, 'Category not found.');
-        }
-
         $this->service->update($category, $request->validated());
 
         return redirect()->route('categories.show', $category->id)
             ->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(int $id): RedirectResponse
+    public function destroy(Category $category): RedirectResponse
     {
         $this->authorizeManage();
-        $category = $this->service->find($id);
-
-        if (!$category) {
-            abort(404, 'Category not found.');
-        }
 
         $result = $this->service->delete($category);
 
@@ -86,14 +65,8 @@ class CategoryController extends Controller
             ->with('success', $result['message']);
     }
 
-    public function books(int $id): View
+    public function books(Category $category): View
     {
-        $category = $this->service->find($id);
-
-        if (!$category) {
-            abort(404, 'Category not found.');
-        }
-
         $books = $this->service->categoryBooks($category);
 
         return view('categories.books', compact('category', 'books'));
