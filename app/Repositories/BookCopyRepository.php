@@ -9,6 +9,16 @@ use Illuminate\Support\Collection;
 
 class BookCopyRepository implements BookCopyRepositoryInterface
 {
+    public function findById(int $id): ?BookCopy
+    {
+        return BookCopy::with('book')->find($id);
+    }
+    public function updateStatus(BookCopy $copy, CopyStatus $status): BookCopy
+    {
+        $copy->update(['status' => $status]);
+
+        return $copy->fresh('book');
+    }
     public function findByBook(int $bookId): Collection
     {
         return BookCopy::where('book_id', $bookId)

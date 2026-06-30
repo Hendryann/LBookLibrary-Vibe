@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransactionController;
 
 Route::get('/', fn() => redirect()->route('books.index'));
 
@@ -83,4 +84,23 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'destroy'])
             ->name('books.copies.destroy');
     });
+});
+
+// ===Domain 4 : Borrowing Lifecycle===
+Route::middleware('auth')->group(function () {
+    Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+    Route::get('/transactions/overdue', [TransactionController::class, 'overdue'])
+        ->middleware('role:ADMIN,LIBRARIAN')
+        ->name('transactions.overdue');
+    Route::get('/transactions/{id}', [TransactionController::class, 'show'])
+        ->whereNumber('id')
+        ->name('transactions.show');
+    Route::post('/transactions/borrow', [TransactionController::class, 'borrow'])
+        ->name('transactions.borrow');
+    Route::patch('/transactions/{id}/return', [TransactionController::class, 'returnBook'])
+        ->whereNumber('id')
+        ->name('transactions.return');
+    Route::patch('/transactions/{id}/extend', [TransactionController::class, 'extend'])
+        ->whereNumber('id')
+        ->name('transactions.extend');
 });
