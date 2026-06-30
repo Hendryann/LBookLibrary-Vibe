@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ReservationController;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 Route::get('/', fn() => redirect()->route('books.index'));
 
@@ -100,4 +102,24 @@ Route::middleware('auth')->group(function () {
     Route::patch('/transactions/{id}/extend', [TransactionController::class, 'extend'])
         ->whereNumber('id')
         ->name('transactions.extend');
+});
+// ===Domain 5 : Reservation System===
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reservations', [ReservationController::class, 'index'])
+        ->name('reservations.index');
+
+    Route::post('/reservations', [ReservationController::class, 'store'])
+        ->name('reservations.store');
+
+    Route::get('/reservations/{id}', [ReservationController::class, 'show'])
+        ->whereNumber('id')
+        ->name('reservations.show');
+
+    Route::patch('/reservations/{id}/cancel', [ReservationController::class, 'cancel'])
+        ->whereNumber('id')
+        ->name('reservations.cancel');
+
+    Route::get('/books/{id}/reservations', [ReservationController::class, 'bookReservations'])
+        ->whereNumber('id')
+        ->name('books.reservations');
 });
