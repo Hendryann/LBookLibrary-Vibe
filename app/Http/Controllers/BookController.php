@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Role;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\Category;
 use App\Services\BookService;
+use App\Services\InventoryService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class BookController extends Controller
 {
-    public function __construct(private readonly BookService $service) {}
+    public function __construct(
+        private readonly BookService $service,
+        private readonly InventoryService $inventoryService,
+    ) {}
 
     public function index(Request $request): View
     {
@@ -26,7 +31,10 @@ class BookController extends Controller
 
     public function show(Book $book): View
     {
-        return view('books.show', compact('book'));
+        $availability = $this->inventoryService->getAvailability($book->id);
+        $copies = $this->inventoryService->getCopiesForBook($book->id);
+
+        return view('books.show', compact('book', 'availability', 'copies'));
     }
 
     public function create(): View
@@ -75,9 +83,8 @@ class BookController extends Controller
 
     private function authorizeManage(): void
     {
-        $role = auth()->user()?->role?->value ?? '';
-
-        if (!in_array($role, ['admin', 'librarian'], true)) {
+        $user = auth()->user();
+        if (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true)) {
             abort(403, 'Unauthorized.');
         }
     }

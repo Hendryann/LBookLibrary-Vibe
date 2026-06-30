@@ -73,17 +73,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/books/{book}/availability', [App\Http\Controllers\BookCopyController::class, 'availability'])
         ->name('books.availability');
 
-    // Admin & Librarian only
-    Route::middleware(['role:ADMIN,LIBRARIAN'])->group(function () {
-        Route::post('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'store'])
-            ->name('books.copies.store');
+    // Admin & Librarian only (enforced inside BookCopyController::middleware())
+    Route::post('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'store'])
+        ->name('books.copies.store');
 
-        Route::put('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'update'])
-            ->name('books.copies.update');
+    Route::put('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'update'])
+        ->name('books.copies.update');
 
-        Route::delete('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'destroy'])
-            ->name('books.copies.destroy');
-    });
+    Route::delete('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'destroy'])
+        ->name('books.copies.destroy');
 });
 
 // ===Domain 4 : Borrowing Lifecycle===

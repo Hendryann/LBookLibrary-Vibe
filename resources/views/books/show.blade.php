@@ -90,7 +90,7 @@
     </div>
 
     {{-- Add Copy Form (Admin/Librarian) --}}
-    @if (auth()->user()->role === \App\Enums\Role::ADMIN || auth()->user()->role === \App\Enums\Role::LIBRARIAN)
+    @if (auth()->user()?->role === \App\Enums\Role::ADMIN || auth()->user()?->role === \App\Enums\Role::LIBRARIAN)
         <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 mb-8">
             <h2 class="text-lg font-semibold text-zinc-100 mb-4">Add Physical Copy</h2>
             <form method="POST" action="{{ route('books.copies.store', $book) }}" class="flex flex-col sm:flex-row gap-4 items-end">
@@ -135,7 +135,7 @@
                             <th class="pb-3 pr-4 text-xs font-semibold text-zinc-400 uppercase tracking-wider">Barcode</th>
                             <th class="pb-3 pr-4 text-xs font-semibold text-zinc-400 uppercase tracking-wider">Status</th>
                             <th class="pb-3 pr-4 text-xs font-semibold text-zinc-400 uppercase tracking-wider">Added</th>
-                            @if (auth()->user()->role === \App\Enums\Role::ADMIN || auth()->user()->role === \App\Enums\Role::LIBRARIAN)
+                            @if (auth()->user()?->role === \App\Enums\Role::ADMIN || auth()->user()?->role === \App\Enums\Role::LIBRARIAN)
                                 <th class="pb-3 text-xs font-semibold text-zinc-400 uppercase tracking-wider text-right">Actions</th>
                             @endif
                         </tr>
@@ -159,7 +159,7 @@
                                 </td>
                                 <td class="py-3 pr-4 text-zinc-500">{{ $copy->created_at->format('d M Y') }}</td>
 
-                                @if (auth()->user()->role === \App\Enums\Role::ADMIN || auth()->user()->role === \App\Enums\Role::LIBRARIAN)
+                                @if (auth()->user()?->role === \App\Enums\Role::ADMIN || auth()->user()?->role === \App\Enums\Role::LIBRARIAN)
                                     <td class="py-3 text-right">
                                         <div class="flex items-center justify-end gap-2">
                                             {{-- Update Status Form --}}

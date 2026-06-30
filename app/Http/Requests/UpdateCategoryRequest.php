@@ -12,8 +12,8 @@ class UpdateCategoryRequest extends FormRequest
             return false;
         }
 
-        $role = auth()->user()->role?->value ?? '';
-        return in_array($role, ['admin', 'librarian'], true);
+        $user = auth()->user();
+        return in_array($user->role, [\App\Enums\Role::ADMIN, \App\Enums\Role::LIBRARIAN], true);
     }
 
     public function rules(): array

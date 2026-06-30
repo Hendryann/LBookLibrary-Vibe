@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Services\CategoryService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use App\Enums\Role;
 
 class CategoryController extends Controller
 {
@@ -74,9 +75,8 @@ class CategoryController extends Controller
 
     private function authorizeManage(): void
     {
-        $role = auth()->user()?->role?->value ?? '';
-
-        if (!in_array($role, ['admin', 'librarian'], true)) {
+        $user = auth()->user();
+        if (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true)) {
             abort(403, 'Unauthorized.');
         }
     }

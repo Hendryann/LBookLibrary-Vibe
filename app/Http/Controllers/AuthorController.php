@@ -8,6 +8,7 @@ use App\Models\Author;
 use App\Services\AuthorService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use App\Enums\Role;
 
 class AuthorController extends Controller
 {
@@ -79,9 +80,8 @@ class AuthorController extends Controller
 
     private function authorizeManage(): void
     {
-        $role = auth()->user()?->role?->value ?? '';
-
-        if (!in_array($role, ['admin', 'librarian'], true)) {
+        $user = auth()->user();
+        if (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true)) {
             abort(403, 'Unauthorized.');
         }
     }
