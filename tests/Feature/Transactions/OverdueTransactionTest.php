@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\CopyStatus;
+use App\Enums\Role;
 use App\Enums\TransactionStatus;
 use App\Models\Author;
 use App\Models\Book;
@@ -13,7 +14,7 @@ use Illuminate\Support\Carbon;
 uses(RefreshDatabase::class);
 
 it('lists overdue transactions for staff and syncs status', function () {
-    $librarian = User::factory()->create(['role' => 'LIBRARIAN']);
+    $librarian = User::factory()->create(['role' => Role::LIBRARIAN]);
     $borrower = User::factory()->create();
     $author = Author::factory()->create();
     $book = Book::factory()->create(['author_id' => $author->id]);
@@ -39,7 +40,7 @@ it('lists overdue transactions for staff and syncs status', function () {
 });
 
 it('forbids members from viewing the overdue list', function () {
-    $member = User::factory()->create(['role' => 'MEMBER']);
+    $member = User::factory()->create(['role' => Role::MEMBER]);
 
     $response = $this->actingAs($member)->get('/transactions/overdue');
 

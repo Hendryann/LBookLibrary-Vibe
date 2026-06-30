@@ -90,7 +90,6 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
     Route::get('/transactions/overdue', [TransactionController::class, 'overdue'])
-        ->middleware('role:ADMIN,LIBRARIAN')
         ->name('transactions.overdue');
     Route::get('/transactions/{id}', [TransactionController::class, 'show'])
         ->whereNumber('id')

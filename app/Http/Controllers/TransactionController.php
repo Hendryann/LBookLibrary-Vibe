@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Role;
 use App\Exceptions\BorrowingException;
 use App\Http\Requests\BorrowBookRequest;
 use App\Http\Requests\ExtendTransactionRequest;
@@ -17,7 +18,7 @@ class TransactionController extends Controller
     public function index(Request $request): View
     {
         $user = $request->user();
-        $isStaff = in_array($user->role->value ?? $user->role, ['ADMIN', 'LIBRARIAN'], true);
+        $isStaff = in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true);
 
         $this->transactions->syncOverdueStatuses();
 
@@ -81,10 +82,15 @@ class TransactionController extends Controller
 
     public function overdue(Request $request): View
     {
+        $user = $request->user();
+        $isStaff = in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true);
+
+        abort_unless($isStaff, 403, 'Only administrators or librarians may view overdue transactions.');
+
         $list = $this->transactions->overdue();
 
         return view('transactions.overdue', [
             'transactions' => $list,
         ]);
     }
-}   
+}

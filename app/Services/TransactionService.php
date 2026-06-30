@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Enums\CopyStatus;
+use App\Enums\Role;
 use App\Enums\TransactionStatus;
 use App\Exceptions\BorrowingException;
 use App\Models\Transaction;
@@ -206,7 +207,7 @@ class TransactionService
     protected function assertOwnerOrStaff(User $user, Transaction $transaction): void
     {
         $isOwner = $transaction->user_id === $user->id;
-        $isStaff = in_array($user->role->value ?? $user->role, ['ADMIN', 'LIBRARIAN'], true);
+        $isStaff = in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true);
 
         if (! $isOwner && ! $isStaff) {
             throw BorrowingException::unauthorizedAction();

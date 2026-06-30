@@ -6,29 +6,42 @@ use App\Enums\Role;
 use App\Http\Requests\StoreBookCopyRequest;
 use App\Http\Requests\UpdateBookCopyRequest;
 use App\Models\Book;
-use App\Models\BookCopy;
 use App\Services\InventoryService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\View\View;
 
-class BookCopyController extends Controller
+class BookCopyController extends Controller implements HasMiddleware
 {
     public function __construct(
         private readonly InventoryService $inventoryService
-    ) {
-        // Authorize manage-inventory for store, update, destroy only
-        $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $user = $request->user();
-            if ($this->isManagementAction($request) && (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true))) {
-                abort(403, 'Unauthorized to manage inventory.');
-            }
-            return $next($request);
-        });
+    ) {}
+
+    /**
+     * Authorize manage-inventory for store, update, destroy only.
+     */
+    public static function middleware(): array
+    {
+        return [
+            'auth',
+            new Middleware(function (Request $request, \Closure $next) {
+                $user = $request->user();
+
+                if (
+                    self::isManagementAction($request)
+                    && (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true))
+                ) {
+                    abort(403, 'Unauthorized to manage inventory.');
+                }
+
+                return $next($request);
+            }),
+        ];
     }
 
-    private function isManagementAction(Request $request): bool
+    private static function isManagementAction(Request $request): bool
     {
         return in_array($request->getMethod(), ['POST', 'PUT', 'DELETE'], true);
     }
@@ -38,9 +51,8 @@ class BookCopyController extends Controller
      */
     public function index(Book $book): View
     {
-        $copies       = $this->inventoryService->getCopiesForBook($book->id);
+        $copies = $this->inventoryService->getCopiesForBook($book->id);
         $availability = $this->inventoryService->getAvailability($book->id);
-
         $book->load(['author', 'categories']);
 
         return view('books.show', compact('book', 'copies', 'availability'));
