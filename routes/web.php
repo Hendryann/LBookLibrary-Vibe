@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
@@ -14,14 +14,19 @@ Route::get('/', fn() => redirect()->route('books.index'));
 // Auth
 Route::middleware('guest')->group(function () {
     Route::get('/login',  [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-    Route::get('/register',  [AuthController::class, 'showRegister'])->name('register');
-    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login.submit');
+    Route::get('/register',  [AuthController::class, 'showRegister'])->name('auth.register');
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register.submit');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
-    ->name('logout');
+    ->name('auth.logout');
+
+// Dashboard
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+});
 
 // Books
 Route::get('/books', [BookController::class, 'index'])->name('books.index');

@@ -42,9 +42,6 @@
                class="group bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-5">
                 <h3 class="font-semibold text-gray-900 group-hover:text-indigo-600">{{ $book->title }}</h3>
                 <p class="text-sm text-gray-500 mt-1">{{ $book->author->name }}</p>
-                @if($book->publication_year)
-                    <p class="text-xs text-gray-400 mt-0.5">{{ $book->publication_year }}</p>
-                @endif
             </a>
         @endforeach
     </div>
