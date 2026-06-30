@@ -156,6 +156,6 @@ it('redirects authenticated users away from the register page', function () {
     $user = User::factory()->create();
 
     $this->actingAs($user)
-         ->get(route('auth.register'))
+         ->get(route('register'))
          ->assertRedirect();
 });

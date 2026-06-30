@@ -14,7 +14,7 @@ return new class extends Migration
 
             $table->string('name');
 
-            $table->text('bio')
+            $table->text('biography')
                 ->nullable();
 
             $table->timestamps();

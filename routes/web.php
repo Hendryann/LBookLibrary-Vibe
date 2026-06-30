@@ -1,41 +1,106 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransactionController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
+Route::get('/', fn() => redirect()->route('books.index'));
 
-// Root — redirect to login
-Route::get('/', fn () => redirect()->route('login'));
-
-// ── Guest-only routes ────────────────────────────────────────────────────
+// Auth
 Route::middleware('guest')->group(function () {
-    Route::get('/auth/register', [AuthController::class, 'showRegister'])
-        ->name('auth.register');
-
-    Route::post('/auth/register', [AuthController::class, 'register'])
-        ->name('auth.register.submit');
-
-    // Named 'login' so Laravel's Authenticate middleware can resolve it
-    Route::get('/auth/login', [AuthController::class, 'showLogin'])
-        ->name('login');
-
-    Route::post('/auth/login', [AuthController::class, 'login'])
-        ->name('auth.login.submit');
+    Route::get('/login',  [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login.submit');
+    Route::get('/register',  [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('auth.register.submit');
 });
 
-// ── Authenticated routes ─────────────────────────────────────────────────
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
+
+// Dashboard & Password
 Route::middleware('auth')->group(function () {
-    Route::post('/auth/logout', [AuthController::class, 'logout'])
-        ->name('auth.logout');
+    Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+    Route::put('/password', [AuthController::class, 'updatePassword'])->name('auth.password.update');
+});
 
-    Route::put('/auth/password', [AuthController::class, 'updatePassword'])
-        ->name('auth.password.update');
+// Books
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::middleware('auth')->group(function () {
+    Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+    Route::post('/books', [BookController::class, 'store'])->name('books.store');
+    Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
+    Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
+    Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
+});
+Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
 
-    Route::get('/dashboard', fn () => view('dashboard'))
-        ->name('dashboard');
+// Authors
+Route::get('/authors', [AuthorController::class, 'index'])->name('authors.index');
+Route::middleware('auth')->group(function () {
+    Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
+    Route::post('/authors', [AuthorController::class, 'store'])->name('authors.store');
+    Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
+    Route::put('/authors/{author}', [AuthorController::class, 'update'])->name('authors.update');
+    Route::delete('/authors/{author}', [AuthorController::class, 'destroy'])->name('authors.destroy');
+});
+Route::get('/authors/{author}', [AuthorController::class, 'show'])->name('authors.show');
+Route::get('/authors/{author}/books', [AuthorController::class, 'books'])->name('authors.books');
+
+// Categories
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::middleware('auth')->group(function () {
+    Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+});
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/categories/{category}/books', [CategoryController::class, 'books'])->name('categories.books');
+
+// === Domain 3: Inventory & Physical Copies ===
+
+// Book detail & copies (accessible to all authenticated users)
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'index'])
+        ->name('books.copies.index');
+
+    Route::get('/books/{book}/availability', [App\Http\Controllers\BookCopyController::class, 'availability'])
+        ->name('books.availability');
+
+    // Admin & Librarian only
+    Route::middleware(['role:ADMIN,LIBRARIAN'])->group(function () {
+        Route::post('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'store'])
+            ->name('books.copies.store');
+
+        Route::put('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'update'])
+            ->name('books.copies.update');
+
+        Route::delete('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'destroy'])
+            ->name('books.copies.destroy');
+    });
+});
+
+// ===Domain 4 : Borrowing Lifecycle===
+Route::middleware('auth')->group(function () {
+    Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+    Route::get('/transactions/overdue', [TransactionController::class, 'overdue'])
+        ->middleware('role:ADMIN,LIBRARIAN')
+        ->name('transactions.overdue');
+    Route::get('/transactions/{id}', [TransactionController::class, 'show'])
+        ->whereNumber('id')
+        ->name('transactions.show');
+    Route::post('/transactions/borrow', [TransactionController::class, 'borrow'])
+        ->name('transactions.borrow');
+    Route::patch('/transactions/{id}/return', [TransactionController::class, 'returnBook'])
+        ->whereNumber('id')
+        ->name('transactions.return');
+    Route::patch('/transactions/{id}/extend', [TransactionController::class, 'extend'])
+        ->whereNumber('id')
+        ->name('transactions.extend');
 });
