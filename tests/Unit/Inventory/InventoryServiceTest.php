@@ -21,6 +21,14 @@ function makeTestBook(): Book
     return Book::factory()->create(['author_id' => $author->id]);
 }
 
+function makeTestCopy(Book $book, CopyStatus $status = CopyStatus::AVAILABLE): BookCopy
+{
+    return BookCopy::create([
+        'book_id' => $book->id,
+        'status' => $status,
+    ]);
+}
+
 // ─── Availability Calculation ─────────────────────────────────────────────────
 
 test('availability returns zero stats for book with no copies', function () {
@@ -40,7 +48,7 @@ test('availability returns zero stats for book with no copies', function () {
 test('availability status is available when copies exist', function () {
     $service = makeInventoryService();
     $book    = makeTestBook();
-    BookCopy::factory()->create(['book_id' => $book->id, 'status' => CopyStatus::AVAILABLE]);
+    makeTestCopy($book, CopyStatus::AVAILABLE);
 
     $availability = $service->getAvailability($book->id);
 
@@ -51,7 +59,8 @@ test('availability status is available when copies exist', function () {
 test('availability status is out_of_stock when all copies are borrowed', function () {
     $service = makeInventoryService();
     $book    = makeTestBook();
-    BookCopy::factory()->count(2)->create(['book_id' => $book->id, 'status' => CopyStatus::BORROWED]);
+    makeTestCopy($book, CopyStatus::BORROWED);
+    makeTestCopy($book, CopyStatus::BORROWED);
 
     $availability = $service->getAvailability($book->id);
 
@@ -75,7 +84,7 @@ test('availability is recalculated after adding a copy', function () {
 test('availability is recalculated after deleting a copy', function () {
     $service = makeInventoryService();
     $book    = makeTestBook();
-    $copy    = BookCopy::factory()->create(['book_id' => $book->id, 'status' => CopyStatus::AVAILABLE]);
+    $copy    = makeTestCopy($book, CopyStatus::AVAILABLE);
 
     $before = $service->getAvailability($book->id);
     expect($before['total'])->toBe(1);
@@ -137,7 +146,7 @@ test('create copy stores correct book_id and status', function () {
 test('update copy changes status correctly', function () {
     $service = makeInventoryService();
     $book    = makeTestBook();
-    $copy    = BookCopy::factory()->create(['book_id' => $book->id, 'status' => CopyStatus::AVAILABLE]);
+    $copy    = makeTestCopy($book, CopyStatus::AVAILABLE);
 
     $updated = $service->updateCopy($copy, ['status' => CopyStatus::BORROWED->value]);
 
@@ -148,10 +157,13 @@ test('mixed statuses are all counted correctly', function () {
     $service = makeInventoryService();
     $book    = makeTestBook();
 
-    BookCopy::factory()->count(3)->create(['book_id' => $book->id, 'status' => CopyStatus::AVAILABLE]);
-    BookCopy::factory()->count(2)->create(['book_id' => $book->id, 'status' => CopyStatus::BORROWED]);
-    BookCopy::factory()->count(1)->create(['book_id' => $book->id, 'status' => CopyStatus::RESERVED]);
-    BookCopy::factory()->count(1)->create(['book_id' => $book->id, 'status' => CopyStatus::LOST]);
+    makeTestCopy($book, CopyStatus::AVAILABLE);
+    makeTestCopy($book, CopyStatus::AVAILABLE);
+    makeTestCopy($book, CopyStatus::AVAILABLE);
+    makeTestCopy($book, CopyStatus::BORROWED);
+    makeTestCopy($book, CopyStatus::BORROWED);
+    makeTestCopy($book, CopyStatus::RESERVED);
+    makeTestCopy($book, CopyStatus::LOST);
 
     $stats = $service->getAvailability($book->id);
 

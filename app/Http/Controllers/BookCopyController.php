@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Role;
 use App\Http\Requests\StoreBookCopyRequest;
 use App\Http\Requests\UpdateBookCopyRequest;
 use App\Models\Book;
@@ -15,7 +16,22 @@ class BookCopyController extends Controller
 {
     public function __construct(
         private readonly InventoryService $inventoryService
-    ) {}
+    ) {
+        // Authorize manage-inventory for store, update, destroy only
+        $this->middleware('auth');
+        $this->middleware(function ($request, $next) {
+            $user = $request->user();
+            if ($this->isManagementAction($request) && (! $user || ! in_array($user->role, [Role::ADMIN, Role::LIBRARIAN], true))) {
+                abort(403, 'Unauthorized to manage inventory.');
+            }
+            return $next($request);
+        });
+    }
+
+    private function isManagementAction(Request $request): bool
+    {
+        return in_array($request->getMethod(), ['POST', 'PUT', 'DELETE'], true);
+    }
 
     /**
      * Display all copies of a book (Book Detail page).
