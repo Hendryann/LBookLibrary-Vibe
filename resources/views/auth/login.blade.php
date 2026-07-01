@@ -167,7 +167,7 @@
             <p class="text-center mt-6 text-zinc-500 text-sm">
                 New to Bibliotheca?
                 <a
-                    href="{{ route('auth.register') }}"
+                    href="{{ route('register') }}"
                     class="text-amber-400 hover:text-amber-300 font-medium transition-colors duration-150 ml-1"
                 >Create an account</a>
             </p>

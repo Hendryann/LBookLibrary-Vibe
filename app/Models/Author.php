@@ -11,7 +11,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'bio'];
+    protected $fillable = ['name', 'biography'];
 
     protected static function newFactory(): AuthorFactory
     {

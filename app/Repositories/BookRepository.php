@@ -62,11 +62,11 @@ class BookRepository
     public function update(Book $book, array $data): Book
     {
         $book->update([
-            'title'            => $data['title'],
-            'description'      => $data['description'] ?? null,
-            'isbn'             => $data['isbn'] ?? null,
-            'publication_year' => $data['publication_year'] ?? null,
-            'author_id'        => $data['author_id'],
+            'title'            => $data['title'] ?? $book->title,
+            'description'      => $data['description'] ?? $book->description,
+            'isbn'             => $data['isbn'] ?? $book->isbn,
+            'publication_year' => $data['publication_year'] ?? $book->publication_year,
+            'author_id'        => $data['author_id'] ?? $book->author_id,
         ]);
 
         $book->categories()->sync($data['category_ids'] ?? []);

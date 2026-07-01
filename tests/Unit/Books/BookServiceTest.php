@@ -33,6 +33,7 @@ it('create persists book', function () {
     $category = Category::factory()->create();
     $data     = [
         'title'        => 'Test Book',
+        'description'  => 'Test Description',
         'author_id'    => $author->id,
         'category_ids' => [$category->id],
     ];

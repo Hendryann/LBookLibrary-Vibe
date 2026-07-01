@@ -14,13 +14,14 @@ return new class extends Migration
 
             $table->string('title');
 
-            $table->text('description');
+            $table->text('description')
+                ->nullable();
 
             $table->string('isbn')
                 ->nullable()
                 ->unique();
 
-            $table->year('published_year')
+            $table->year('publication_year')
                 ->nullable();
 
             $table->foreignId('author_id')

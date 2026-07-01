@@ -15,22 +15,22 @@ Route::get('/', fn() => redirect()->route('books.index'));
 Route::middleware('guest')->group(function () {
     Route::get('/login',  [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login.submit');
-    Route::get('/register',  [AuthController::class, 'showRegister'])->name('auth.register');
+    Route::get('/register',  [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register.submit');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
-    ->name('auth.logout');
+    ->name('logout');
 
-// Dashboard
+// Dashboard & Password
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+    Route::put('/password', [AuthController::class, 'updatePassword'])->name('auth.password.update');
 });
 
 // Books
 Route::get('/books', [BookController::class, 'index'])->name('books.index');
-Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
 Route::middleware('auth')->group(function () {
     Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
     Route::post('/books', [BookController::class, 'store'])->name('books.store');
@@ -38,11 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
     Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 });
+Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
 
 // Authors
 Route::get('/authors', [AuthorController::class, 'index'])->name('authors.index');
-Route::get('/authors/{author}', [AuthorController::class, 'show'])->name('authors.show');
-Route::get('/authors/{author}/books', [AuthorController::class, 'books'])->name('authors.books');
 Route::middleware('auth')->group(function () {
     Route::get('/authors/create', [AuthorController::class, 'create'])->name('authors.create');
     Route::post('/authors', [AuthorController::class, 'store'])->name('authors.store');
@@ -50,11 +49,11 @@ Route::middleware('auth')->group(function () {
     Route::put('/authors/{author}', [AuthorController::class, 'update'])->name('authors.update');
     Route::delete('/authors/{author}', [AuthorController::class, 'destroy'])->name('authors.destroy');
 });
+Route::get('/authors/{author}', [AuthorController::class, 'show'])->name('authors.show');
+Route::get('/authors/{author}/books', [AuthorController::class, 'books'])->name('authors.books');
 
 // Categories
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
-Route::get('/categories/{category}/books', [CategoryController::class, 'books'])->name('categories.books');
 Route::middleware('auth')->group(function () {
     Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
     Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -62,3 +61,5 @@ Route::middleware('auth')->group(function () {
     Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
     Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 });
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/categories/{category}/books', [CategoryController::class, 'books'])->name('categories.books');

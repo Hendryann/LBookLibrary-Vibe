@@ -10,7 +10,7 @@ it('logs out an authenticated user and redirects to login', function () {
     $user = User::factory()->create();
 
     $response = $this->actingAs($user)
-                     ->post(route('auth.logout'));
+                     ->post(route('logout'));
 
     $response->assertRedirect(route('login'));
 });
@@ -19,7 +19,7 @@ it('de-authenticates the user after logout', function () {
     $user = User::factory()->create();
 
     $this->actingAs($user)
-         ->post(route('auth.logout'));
+         ->post(route('logout'));
 
     $this->assertGuest();
 });
@@ -30,7 +30,7 @@ it('regenerates the CSRF token after logout', function () {
     $before = $this->actingAs($user)->get(route('dashboard'));
     $tokenBefore = session()->token();
 
-    $this->post(route('auth.logout'));
+    $this->post(route('logout'));
 
     // Session was invalidated — a new token is generated
     $this->assertGuest();
@@ -40,7 +40,7 @@ it('regenerates the CSRF token after logout', function () {
 // ── Guest protection ──────────────────────────────────────────────────────
 
 it('redirects unauthenticated requests to the logout route back to login', function () {
-    $response = $this->post(route('auth.logout'));
+    $response = $this->post(route('logout'));
 
     $response->assertRedirect(route('login'));
     $this->assertGuest();

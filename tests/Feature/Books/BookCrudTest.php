@@ -92,7 +92,7 @@ it('member forbidden from store', function () {
 
 it('validates required title', function () {
     $this->actingAs(adminUser())->post(route('books.store'), [
-        'author_id' => Author::factory()->id,
+        'author_id' => Author::factory()->create()->id,
     ])->assertSessionHasErrors('title');
 });
 
