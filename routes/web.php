@@ -4,9 +4,6 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
-use App\Models\Author;
-use App\Models\Book;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => redirect()->route('books.index'));
@@ -63,3 +60,27 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('/categories/{category}/books', [CategoryController::class, 'books'])->name('categories.books');
+
+// === Domain 3: Inventory & Physical Copies ===
+
+// Book detail & copies (accessible to all authenticated users)
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'index'])
+        ->name('books.copies.index');
+
+    Route::get('/books/{book}/availability', [App\Http\Controllers\BookCopyController::class, 'availability'])
+        ->name('books.availability');
+
+    // Admin & Librarian only
+    Route::middleware(['role:ADMIN,LIBRARIAN'])->group(function () {
+        Route::post('/books/{book}/copies', [App\Http\Controllers\BookCopyController::class, 'store'])
+            ->name('books.copies.store');
+
+        Route::put('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'update'])
+            ->name('books.copies.update');
+
+        Route::delete('/books/{book}/copies/{copyId}', [App\Http\Controllers\BookCopyController::class, 'destroy'])
+            ->name('books.copies.destroy');
+    });
+});
