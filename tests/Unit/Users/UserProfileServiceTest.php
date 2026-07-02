@@ -23,7 +23,7 @@ it('updates the user profile with valid data', function () {
 
 it('throws a validation exception when user does not exist', function () {
     expect(fn () => $this->service->findOrFail(999999))
-        ->toThrow(ValidationException::class);
+        ->toThrow(\App\Exceptions\UserNotFoundException::class);
 });
 
 it('prevents non-admin from deleting another user', function () {
@@ -31,7 +31,7 @@ it('prevents non-admin from deleting another user', function () {
     $target = User::factory()->create(['role' => Role::MEMBER]);
 
     expect(fn () => $this->service->deleteUser($target->id, $actor))
-        ->toThrow(ValidationException::class);
+        ->toThrow(\App\Exceptions\UnauthorizedActionException::class);
 });
 
 it('allows admin to delete a user', function () {

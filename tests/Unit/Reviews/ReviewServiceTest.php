@@ -30,14 +30,14 @@ it('throws an exception for duplicate review', function () {
     Review::factory()->create(['user_id' => $user->id, 'book_id' => $book->id]);
 
     expect(fn () => $this->service->createReview($book->id, $user, ['rating' => 3]))
-        ->toThrow(ValidationException::class);
+        ->toThrow(\App\Exceptions\DuplicateReviewException::class);
 });
 
 it('throws an exception for a non-existent book', function () {
     $user = User::factory()->create();
 
     expect(fn () => $this->service->createReview(999999, $user, ['rating' => 4]))
-        ->toThrow(ValidationException::class);
+        ->toThrow(\App\Exceptions\BookNotFoundException::class);
 });
 
 it('allows the review owner to delete their review', function () {
@@ -57,7 +57,7 @@ it('prevents a non-owner non-admin from deleting a review', function () {
     $review = Review::factory()->create(['user_id' => $owner->id, 'book_id' => $book->id]);
 
     expect(fn () => $this->service->deleteReview($book->id, $review->id, $other))
-        ->toThrow(ValidationException::class);
+        ->toThrow(\App\Exceptions\UnauthorizedActionException::class);
 });
 
 it('allows an admin to delete any review', function () {
