@@ -3,11 +3,12 @@
 namespace App\Services;
 
 use App\Enums\Role;
+use App\Exceptions\UnauthorizedActionException;
+use App\Exceptions\UserNotFoundException;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\ValidationException;
 
 class UserProfileService
 {
@@ -25,9 +26,7 @@ class UserProfileService
         $user = $this->userRepository->find($id);
 
         if (! $user) {
-            throw ValidationException::withMessages([
-                'user' => 'User not found.',
-            ])->status(404);
+            throw new UserNotFoundException();
         }
 
         return $user;
@@ -47,9 +46,7 @@ class UserProfileService
         $user = $this->findOrFail($id);
 
         if ($actingUser->role !== Role::ADMIN) {
-            throw ValidationException::withMessages([
-                'authorization' => 'Only administrators may delete users.',
-            ])->status(403);
+            throw new UnauthorizedActionException('Only administrators may delete users.');
         }
 
         return DB::transaction(function () use ($user) {

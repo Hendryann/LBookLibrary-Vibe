@@ -60,7 +60,7 @@ class UserController extends Controller
 
     public function recommendations(Request $request)
     {
-        $recommendations = $this->recommendationService->recommendForUser(Auth::id());
+        $recommendations = $this->recommendationService->recommendForUser($request->user()->id);
 
         return view('users.recommendations', compact('recommendations'));
     }
@@ -68,7 +68,7 @@ class UserController extends Controller
     protected function authorizeAdmin(Request $request): void
     {
         if ($request->user()->role !== \App\Enums\Role::ADMIN) {
-            abort(403, 'Only administrators may view all users.');
+            throw new \App\Exceptions\UnauthorizedActionException('Only administrators may view all users.');
         }
     }
 }

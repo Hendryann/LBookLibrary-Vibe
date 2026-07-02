@@ -3,13 +3,15 @@
 namespace App\Services;
 
 use App\Enums\Role;
-use App\Models\Book;
+use App\Exceptions\BookNotFoundException;
+use App\Exceptions\DuplicateReviewException;
+use App\Exceptions\ReviewNotFoundException;
+use App\Exceptions\UnauthorizedActionException;
 use App\Models\Review;
 use App\Models\User;
 use App\Repositories\BookRepository;
 use App\Repositories\ReviewRepository;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\ValidationException;
 
 class ReviewService
 {
@@ -20,20 +22,16 @@ class ReviewService
 
     public function createReview(int $bookId, User $user, array $data): Review
     {
-        $book = $this->bookRepository->find($bookId);
+        $book = $this->bookRepository->findById($bookId);
 
         if (! $book) {
-            throw ValidationException::withMessages([
-                'book' => 'Book not found.',
-            ])->status(404);
+            throw new BookNotFoundException();
         }
 
         $existing = $this->reviewRepository->findByUserAndBook($user->id, $bookId);
 
         if ($existing) {
-            throw ValidationException::withMessages([
-                'review' => 'You have already reviewed this book.',
-            ])->status(409);
+            throw new DuplicateReviewException();
         }
 
         return DB::transaction(function () use ($book, $user, $data) {
@@ -51,18 +49,14 @@ class ReviewService
         $review = $this->reviewRepository->find($reviewId);
 
         if (! $review || $review->book_id !== $bookId) {
-            throw ValidationException::withMessages([
-                'review' => 'Review not found.',
-            ])->status(404);
+            throw new ReviewNotFoundException();
         }
 
         $isOwner = $review->user_id === $actingUser->id;
         $isAdmin = $actingUser->role === Role::ADMIN;
 
         if (! $isOwner && ! $isAdmin) {
-            throw ValidationException::withMessages([
-                'authorization' => 'You are not authorized to delete this review.',
-            ])->status(403);
+            throw new UnauthorizedActionException('You are not authorized to delete this review.');
         }
 
         return DB::transaction(function () use ($review) {

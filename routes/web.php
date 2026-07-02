@@ -126,7 +126,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('books.reservations');
 });
 
-Route::middleware('auth.session')->group(function () {
+Route::middleware('auth')->group(function () {
     // User Profile
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/history', [UserController::class, 'history'])->name('users.history');
@@ -140,4 +140,3 @@ Route::middleware('auth.session')->group(function () {
     Route::post('/books/{book}/reviews', [ReviewController::class, 'store'])->name('books.reviews.store');
     Route::delete('/books/{book}/reviews/{review}', [ReviewController::class, 'destroy'])->name('books.reviews.destroy');
 });
-
