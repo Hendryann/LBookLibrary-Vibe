@@ -6,9 +6,23 @@ use App\Enums\TransactionStatus;
 use App\Models\Transaction;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 
 class TransactionRepository
 {
+
+    public function getForUser(int $userId): Collection
+    {
+        return Transaction::with('copy.book')
+            ->where('user_id', $userId)
+            ->orderByDesc('borrow_date')
+            ->get();
+    }
+
+    public function find(int $id): ?Transaction
+    {
+        return Transaction::find($id);
+    }
     public function create(array $data): Transaction
     {
         return Transaction::create($data);

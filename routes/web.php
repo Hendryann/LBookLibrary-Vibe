@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReviewController;
 
 Route::get('/', fn() => redirect()->route('books.index'));
 
@@ -123,3 +125,19 @@ Route::middleware(['auth'])->group(function () {
         ->whereNumber('id')
         ->name('books.reservations');
 });
+
+Route::middleware('auth.session')->group(function () {
+    // User Profile
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/history', [UserController::class, 'history'])->name('users.history');
+    Route::get('/users/recommendations', [UserController::class, 'recommendations'])->name('users.recommendations');
+    Route::get('/users/{id}', [UserController::class, 'show'])->whereNumber('id')->name('users.show');
+    Route::put('/users/{id}', [UserController::class, 'update'])->whereNumber('id')->name('users.update');
+    Route::delete('/users/{id}', [UserController::class, 'destroy'])->whereNumber('id')->name('users.destroy');
+
+    // Reviews (nested under books)
+    Route::get('/books/{book}/reviews', [ReviewController::class, 'index'])->name('books.reviews.index');
+    Route::post('/books/{book}/reviews', [ReviewController::class, 'store'])->name('books.reviews.store');
+    Route::delete('/books/{book}/reviews/{review}', [ReviewController::class, 'destroy'])->name('books.reviews.destroy');
+});
+
